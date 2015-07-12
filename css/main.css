@@ -1,0 +1,35 @@
+body {
+    padding-top: 10px;
+}
+
+.pressable {
+    cursor: pointer;
+}
+
+.pressable:nth-child(even) {
+    background-color: #CCCCCC;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #d3d3d3;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.container-fixed {
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+}
+
+.playing .selected {
+    border: 5px solid lightblue;
+}

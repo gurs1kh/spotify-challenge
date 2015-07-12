@@ -1,10 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<html>
+    <head>
+        <title>Spotify Challenge</title>
 
-</body>
+        <meta charset="utf-8">
+        <meta name="author" content="Manvir Singh">
+
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <script src="js/spotify.js"></script>
+    </head>
+    <body>
+        <div ng-app="spotifyApp" ng-controller="spotifyCtrl" class="container">
+            <div class="col-md-4">
+                <form name="artistForm">
+                    <div class="form-group">
+                        <label>Artist search:</label>
+                        <input type="text" name="search" class="form-control" placeholder="Enter a artist name.." ng-model="artistSearch" ng-minlength=3 required />
+                        <p class="help-block" ng-show="artistForm.search.$error.minlength">Enter 3+ characters</p>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-disabled="artistForm.search.$invalid" ng-click="getArtists()">Submit</button>
+                    </div>
+                </form>
+                <div>
+                    <div class="container-fixed">
+                        <div class="row pressable" ng-repeat="artist in artists" ng-click="loadArtist(artist)">
+                            <div class="col-xs-3 col-sm-2 col-md-5">
+                                <img src="{{artist.images[1].url}}" />
+                            </div>
+                            <div>
+                                <p>{{artist.name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <form name="albumForm">
+                    <div class="form-group">
+                        <label>Album search:</label>
+                        <input type="text" name="search" class="form-control" placeholder="Enter a album name.." ng-model="albumSearch" ng-minlength=3 required />
+                        <p class="help-block" ng-show="albumForm.search.$error.minlength">Enter 3+ characters</p>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-disabled="albumForm.search.$invalid" ng-click="getAlbums()">Submit</button>
+                    </div>
+                </form>
+                <div>
+                    <div class="container-fixed">
+                        <div class="row pressable" ng-repeat="album in albums" ng-click="loadAlbum(album)">
+                            <div class="col-xs-3 col-sm-2 col-md-5">
+                                <img src="{{album.images[1].url}}" />
+                            </div>
+                            <div>
+                                <p>{{album.name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            <form name="songForm">
+                <div class="form-group">
+                    <label>Track search:</label>
+                    <input type="text" name="search" class="form-control" placeholder="Enter a song name.." ng-model="trackSearch" ng-minlength=3 required />
+                    <p class="help-block" ng-show="songForm.search.$error.minlength">Enter 3+ characters</p>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" ng-disabled="songForm.search.$invalid" ng-click="getSongs()">Submit</button>
+                </div>
+            </form>
+            <div>
+                <div class="container-fixed">
+                    <div class="row pressable" ng-repeat="track in tracks" ng-click="loadTrack(track)">
+                        <div class="col-xs-3 col-sm-2 col-md-5"
+                             ng-class="{'playing' : track.preview_url == currentSong, 'selected' : track.selected}"
+                             ng-click="play(track.preview_url)">
+                            <img src="{{track.album.images[1].url}}"/>
+                        </div>
+                        <div>
+                            <p>{{track.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
