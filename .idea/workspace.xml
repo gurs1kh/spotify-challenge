@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78f30a29-dc0a-4d2a-b959-dbc2c1b200ab" name="Default" comment="" />
+    <list default="true" id="78f30a29-dc0a-4d2a-b959-dbc2c1b200ab" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+    </list>
     <ignored path="spotify-challenge.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +28,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4848485">
-                  <caret line="79" column="108" selection-start-line="79" selection-start-column="108" selection-end-line="79" selection-end-column="108" />
+                <state vertical-scroll-proportion="0.57239056">
+                  <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -50,7 +52,7 @@
           <file leaf-file-name="spotify.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/spotify.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.21296297">
+                <state vertical-scroll-proportion="3.148148">
                   <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
                   <folding />
                 </state>
@@ -79,8 +81,8 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/spotify.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -236,7 +238,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="72" y="24" width="1400" height="820" extended-state="1" />
+    <frame x="72" y="24" width="1400" height="820" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -339,18 +341,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/spotify.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4848485">
-          <caret line="79" column="108" selection-start-line="79" selection-start-column="108" selection-end-line="79" selection-end-column="108" />
+        <state vertical-scroll-proportion="3.148148">
+          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/spotify.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21296297">
-          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.57239056">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
           <folding />
         </state>
       </provider>

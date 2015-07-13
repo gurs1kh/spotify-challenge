@@ -16,6 +16,17 @@
     </head>
     <body>
         <div ng-app="spotifyApp" ng-controller="spotifyCtrl" class="container">
+            <div class="alert alert-dismissible alert-info">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Welcome to my Spotify App</strong>
+                <p>
+                    You can search by artist, album, or songs.<br />
+                    Clicking on an artist loads that artist's albums in the albums section.<br />
+                    Clicking on an album loads the album's artists and songs.<br />
+                    Clicking on a song loads the song's artists and albums.<br />
+                    Clicking on a song's image allows you to listen to a sample of the song.
+                </p>
+            </div>
             <div class="col-md-4">
                 <form name="artistForm">
                     <div class="form-group">
