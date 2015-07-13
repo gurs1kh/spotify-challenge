@@ -29,11 +29,11 @@
                 </form>
                 <div>
                     <div class="container-fixed">
-                        <div class="row pressable" ng-repeat="artist in artists" ng-click="loadArtist(artist)">
-                            <div class="col-xs-3 col-sm-2 col-md-5">
+                        <div class="row pressable" ng-repeat="artist in artists" ng-click="loadArtist(artist)" ng-class="{'selected': selectedArtist == artist}", ng-class-even="{'striped': selectedArtist != artist}">
+                        <div class="col-xs-3 col-sm-2 col-md-5">
                                 <img src="{{artist.images[1].url}}" />
                             </div>
-                            <div>
+                            <div class="metadata">
                                 <p>{{artist.name}}</p>
                             </div>
                         </div>
@@ -53,11 +53,11 @@
                 </form>
                 <div>
                     <div class="container-fixed">
-                        <div class="row pressable" ng-repeat="album in albums" ng-click="loadAlbum(album)">
-                            <div class="col-xs-3 col-sm-2 col-md-5">
+                        <div class="row pressable" ng-repeat="album in albums" ng-click="loadAlbum(album)" ng-class="{'selected': selectedAlbum == album}", ng-class-even="{'striped': selectedAlbum != album}">
+                        <div class="col-xs-3 col-sm-2 col-md-5">
                                 <img src="{{album.images[1].url}}" />
                             </div>
-                            <div>
+                            <div class="metadata">
                                 <p>{{album.name}}</p>
                             </div>
                         </div>
@@ -77,13 +77,13 @@
             </form>
             <div>
                 <div class="container-fixed">
-                    <div class="row pressable" ng-repeat="track in tracks" ng-click="loadTrack(track)">
+                    <div class="row pressable" ng-repeat="track in tracks" ng-click="loadTrack(track, $event)" ng-class="{'selected': selectedTrack == track}", ng-class-even="{'striped': selectedTrack != track}">
                         <div class="col-xs-3 col-sm-2 col-md-5"
-                             ng-class="{'playing' : track.preview_url == currentSong, 'selected' : track.selected}"
+                             ng-class="track.preview_url == currentSong ? 'playing' : 'playable'"
                              ng-click="play(track.preview_url)">
-                            <img src="{{track.album.images[1].url}}"/>
+                            <img src="{{track.album.images[1].url}}" />
                         </div>
-                        <div>
+                        <div class="metadata">
                             <p>{{track.name}}</p>
                         </div>
                     </div>

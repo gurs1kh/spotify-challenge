@@ -6,7 +6,7 @@ body {
     cursor: pointer;
 }
 
-.pressable:nth-child(even) {
+.striped {
     background-color: #CCCCCC;
 }
 
@@ -14,7 +14,6 @@ img {
     max-height: 100%;
     max-width: 100%;
     margin-bottom: 20px;
-    border: 1px solid #d3d3d3;
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
@@ -30,6 +29,25 @@ img {
     width: 100%;
 }
 
-.playing .selected {
-    border: 5px solid lightblue;
+.selected {
+    background-color: #999999;
+}
+
+.metadata p {
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.playable:hover {
+    -webkit-filter: brightness(1.5);
+}
+
+@keyframes play-animation {
+    0%   {-webkit-filter: brightness(1);}
+    50%  {-webkit-filter: brightness(1.5);}
+    100% {-webkit-filter: brightness(1);}
+}
+
+.playing {
+    animation: play-animation 1s infinite;
 }

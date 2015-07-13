@@ -40,6 +40,7 @@ var spotifyCtrl = spotifyApp.controller('spotifyCtrl', function($scope, $http) {
         $http.get('https://api.spotify.com/v1/artists/' + artist.id + '/top-tracks').success(function(response){
             $scope.tracks = response.tracks;
         });
+        $scope.selectedArtist = artist;
     };
 
     $scope.loadAlbum = function(album) {
@@ -54,19 +55,19 @@ var spotifyCtrl = spotifyApp.controller('spotifyCtrl', function($scope, $http) {
                 });
             });
         });
+        $scope.selectedAlbum = album;
     };
 
-    $scope.loadTrack = function(track) {
-        $scope.artists = [];
-        $scope.albums = [];
-        $http.get('https://api.spotify.com/v1/tracks/' + track.id).success(function(response){
-            loadArtists(response.artists);
-            $scope.albums = [response.album];
-        });
-        $scope.tracks.forEach(function(t) { t.selected = false });
-        track.selected = true;
-        console.log($scope.tracks);
-        console.log(track);
+    $scope.loadTrack = function(track, $event) {
+        if ($event.target.tagName != "IMG") {
+            $scope.artists = [];
+            $scope.albums = [];
+            $http.get('https://api.spotify.com/v1/tracks/' + track.id).success(function(response){
+                loadArtists(response.artists);
+                $scope.albums = [response.album];
+            });
+            $scope.selectedTrack = track;
+        }
     };
 
     $scope.play = function(song) {
@@ -74,7 +75,7 @@ var spotifyCtrl = spotifyApp.controller('spotifyCtrl', function($scope, $http) {
             $scope.audioObject.pause();
             $scope.currentSong = false;
         } else {
-            if($scope.audioObject.pause != undefined) $scope.audioObject.pause();
+            if ($scope.audioObject.pause != undefined) $scope.audioObject.pause();
             $scope.audioObject = new Audio(song);
             $scope.audioObject.play();
             $scope.currentSong = song;
